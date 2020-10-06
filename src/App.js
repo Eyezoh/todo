@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import AdderFunc from './Adder'
+import Navi from './Navigation'
+import TodoApp from './Todo'
+import Adder2 from './NewAdder'
+
+import myList from './Tododata'
+
 function App() {
+  const myProgram = myList.map(item => <TodoApp product={item}/>)
   return (
     <div className="App">
+    <Navi />
+   
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
+       
+        <p>my to do App</p>
+      
+        <AdderFunc />
+        {myProgram }
+       <Adder2 />
+        
       </header>
+  
+     
     </div>
   );
 }
